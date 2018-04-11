@@ -1,0 +1,1 @@
+export { Grid, Ant, default as reducer } from './langton.reducer';
