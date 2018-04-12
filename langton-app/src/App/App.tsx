@@ -1,15 +1,20 @@
 import * as React from 'react';
 import { MuiThemeProvider } from 'material-ui/styles';
-import { AppBar } from 'material-ui';
+import { AppBar, Card } from 'material-ui';
+import Grid from './Grid';
 export interface AppProps { title?: string; }
 
 const App: React.SFC<AppProps> = ({ title }) => (
   <MuiThemeProvider>
     <div>
       <AppBar title={title || 'Welcome to React'} />
-      <p className="App-intro">
-        To get started, edit <code>src/App.tsx</code> and save to reload.
-        </p>
+      <div>
+        <div className="stretch">
+          <Card className="md-card">
+            <Grid />
+          </Card>
+        </div>
+      </div>
     </div>
   </MuiThemeProvider>
 );

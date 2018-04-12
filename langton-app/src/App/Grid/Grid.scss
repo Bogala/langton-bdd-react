@@ -1,0 +1,35 @@
+table {
+    border-collapse: collapse;
+    width: 100%;
+    height: 100%;
+    align-self: center;
+}
+
+table, th, td {
+    border: 1px solid black;
+}
+
+.box {
+    position: relative;
+    width: 100%;
+}
+
+.box:before {
+    content: "";
+    display: block;
+    padding-top: 100%;
+}
+
+.content {
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+}
+
+.ant {
+    background: url('./ant.png') no-repeat;
+    background-size: contain;
+    background-position: center;
+}

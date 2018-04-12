@@ -9,6 +9,8 @@ import { configure, shallow } from 'enzyme';
 import App from './App';
 import { AppBar } from 'material-ui';
 
+import Grid from './Grid';
+
 // tslint:disable-next-line:no-any
 configure({ adapter: new Adapter() });
 
@@ -21,4 +23,9 @@ test('Should have an AppBar with title binded with props', () => {
   const wrapper = shallow(<App />);
   expect(wrapper.find(AppBar)).toHaveLength(1);
   expect(wrapper.find(AppBar).props().title).toEqual('Welcome to React');
+});
+
+test('Should have a Grid', () => {
+  const wrapper = shallow(<App />);
+  expect(wrapper.find(Grid).length).toBe(1);
 });
