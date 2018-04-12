@@ -7,6 +7,7 @@ import * as ReactDOM from 'react-dom';
 import { configure, shallow } from 'enzyme';
 
 import App from './App';
+import { AppBar } from 'material-ui';
 
 // tslint:disable-next-line:no-any
 configure({ adapter: new Adapter() });
@@ -16,7 +17,8 @@ test('renders without crashing', () => {
   ReactDOM.render(<App />, div);
 });
 
-test('App component contains an element with container css class', () => {
+test('Should have an AppBar with title binded with props', () => {
   const wrapper = shallow(<App />);
-  expect(wrapper.find('.App')).toHaveLength(1);
+  expect(wrapper.find(AppBar)).toHaveLength(1);
+  expect(wrapper.find(AppBar).props().title).toEqual('Welcome to React');
 });

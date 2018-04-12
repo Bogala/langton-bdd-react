@@ -1,17 +1,17 @@
 import * as React from 'react';
-
+import { MuiThemeProvider } from 'material-ui/styles';
+import { AppBar } from 'material-ui';
 export interface AppProps { title?: string; }
 
-const App: React.SFC<AppProps> = ({title}) => (
-  <div className="App">
-    <div className="App-header">
-      <img src={require('./logo.svg')} className="App-logo" alt="logo" />
-      <h2>{title || 'Welcome to React'}</h2>
-    </div>
-    <p className="App-intro">
-      To get started, edit <code>src/App.tsx</code> and save to reload.
+const App: React.SFC<AppProps> = ({ title }) => (
+  <MuiThemeProvider>
+    <div>
+      <AppBar title={title || 'Welcome to React'} />
+      <p className="App-intro">
+        To get started, edit <code>src/App.tsx</code> and save to reload.
         </p>
-  </div>
+    </div>
+  </MuiThemeProvider>
 );
 
 export default App;
